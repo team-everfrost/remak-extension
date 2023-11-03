@@ -80,7 +80,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, type App } from "vue";
+import { ref, type App } from "vue";
 import "./style.css";
 
 const token = ref('');
@@ -92,7 +92,6 @@ const saveStatusMessage = ref('올바른 URL이 아니에요!');
 const success = ref(false);
 const hasError = ref(false);
 const resultDocId = ref('');
-const resultUrl = computed(() => `https://remak.io/view/${resultDocId.value}`);
 
 // remak.io의 쿠키를 가져옵니다.
 chrome.cookies.get({ url: "https://remak.io", name: "auth" }, (cookie) => {
@@ -197,7 +196,7 @@ const close = () => {
 
 // 저장된 링크 열기
 const resultLink = () => {
-  chrome.tabs.create({ url: resultUrl.value });
+  chrome.tabs.create({ url: 'https://remak.io/main' });
 };
 
 defineOptions({

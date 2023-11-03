@@ -1,7 +1,7 @@
 {
   "name": "remak",
   "displayName": "Remak",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Remak web clip extension",
   "author": "Everfrost <2800everfrost@gmail.com>",
   "scripts": {
