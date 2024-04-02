@@ -99,7 +99,7 @@ chrome.cookies.get({ url: "https://remak.io", name: "auth" }, (cookie) => {
     token.value = JSON.parse(decodeURIComponent(cookie.value)).accessToken;
 
     // 유저정보 쿼리
-    fetch("https://api-dev.remak.io/user", {
+    fetch("https://api.remak.io/user", {
       headers: {
         accept: "application/json",
         Authorization: `Bearer ${token.value}`,
@@ -130,7 +130,7 @@ const saveUrl = () => {
   if (currentUrl.value.startsWith('http')) {
     saveStatusMessage.value = '저장 중입니다...';
 
-    fetch("https://api-dev.remak.io/document/webpage", {
+    fetch("https://api.remak.io/document/webpage", {
       method: "POST",
       headers: {
         accept: "application/json",
@@ -167,7 +167,7 @@ const retry = () => {
 // 링크 삭제하기
 const deleteUrl = () => {
   if (resultDocId.value) {
-    fetch(`https://api-dev.remak.io/document/${resultDocId.value}`, {
+    fetch(`https://api.remak.io/document/${resultDocId.value}`, {
       method: "DELETE",
       headers: {
         accept: "*/*",
